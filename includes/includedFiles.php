@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
 	include("includes/config.php");
 	include("includes/classes/User.php");
 	include("includes/classes/Artist.php");
@@ -8,15 +8,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
 	include("includes/classes/Song.php");
 	include("includes/classes/Playlist.php");
 
-	if(isset($_GET['userLoggedIn'])) {
+	if (isset($_GET['userLoggedIn'])) {
 		$userLoggedIn = new User($con, $_GET['userLoggedIn']);
-	}
-	else {
+	} else {
 		echo "Username variable was not passed into page. Check the openPage JS function";
 		exit();
 	}
-}
-else {
+} else {
 	include("includes/header.php");
 	include("includes/footer.php");
 
@@ -25,4 +23,3 @@ else {
 	exit();
 }
 
-?>
